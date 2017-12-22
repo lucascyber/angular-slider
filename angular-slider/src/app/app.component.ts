@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+
+  items = [
+    {title: 'Slider 1'},
+    {title: 'Slider 2'},
+    {title: 'Slider 3'},
+  ]
 }

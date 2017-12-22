@@ -1,1 +1,76 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'styles/vendor/fx-aligner/fx-aligner';
+
+body{
+  background: #CDDC39;
+}
+
+img{
+  width: 200px;
+}
+
+h1{
+  font: 50px 'Oswald', sans-serif;
+  color: #fff;
+  text-shadow: 1px 1px 2px #827717;
+}
+
+.container{
+  width: 960px;
+  margin: 0 auto;
+
+  li{
+    &:nth-of-type(1){
+      .item{
+        background: #F44336;
+      }
+    }
+  
+    &:nth-of-type(2){
+      .item{
+        background: #9C27B0;
+      }
+    }
+  
+    &:nth-of-type(3){
+      .item{
+        background: #009688;
+      }
+    }
+  }
+}
+
+.item{
+  width: 500px;
+  height: 400px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  font: 30px 'Oswald', sans-serif;
+  text-shadow: 1px 1px 4px #212121;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+#custom-slider-container{
+  margin-top: 20px;
+}
+
+button{
+  width: 100px;
+  height: 45px;
+  outline: none;
+  font: 20px 'Oswald', sans-serif;
+  text-transform: uppercase;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: #F9FBE7;
+  margin: 0 5px;
+  color: #827717;
+  border: {
+    top: none;
+    bottom: 4px solid #AFB42B;
+    left: 4px solid #AFB42B;
+    right: none;
+  }
+}

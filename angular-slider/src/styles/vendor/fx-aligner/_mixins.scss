@@ -1,0 +1,210 @@
+/*
+========================================================
+  - ESTE CSS É PARA AS FUNÇÕES
+
+  - ELAS PODEM CHAMAR OS EFEITOS DENTRO DE UM ARQUIVO
+    POR EXEMPLO (MEDIA.SCSS OU BASE.SCSS)
+========================================================
+*/
+
+/*
+========================================================
+
+  ************************************************
+                     ÍNDICE
+  ************************************************
+
+  1 - DIRECTION
+  2 - ALIGN
+  3 - HELPERS
+========================================================
+*/
+
+// - CLASSE PRINCIPAL DO CONTAINER PARA DAR INÍCIO AO FX
+
+.fx{
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+// 08006083663
+
+
+/*
+=========================================================
+ 1 - DIRECTION
+=========================================================
+*/
+
+@mixin direction($direction){
+
+  $error : 'Por favor, insira uma direção válida por parâmetro.'
+  +' Únicas direções aceitas: row, row-reverse, column-reverse ou column';
+
+  @if $direction == row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+
+  } @else if $direction == row-reverse {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+      flex-direction: row-reverse;
+
+  } @else if $direction == column {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+
+  } @else if $direction == column-reverse {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse;
+
+  } @else {
+    @error $error;
+  }
+}
+
+
+/*
+=========================================================
+ 2 - ALIGN
+=========================================================
+*/
+
+// 2.1 - ELEMENTS ALIGN 
+@mixin itens-align($vertical, $horizontal) {
+
+  $error-vertical: 'Erro: valores inválidos para $vertical.'
+                    + ' Valores aceitos: top, bottom, stretch, center, baseline.'
+                    + ' Caso você queira um valor nulo adicione: none;';
+
+  $error-horizontal: 'Erro: valores inválidos para $horizontal.'
+                    + ' Valores aceitos: left, right, center, distribute, justify.'
+                    + ' Caso você queira um valor nulo adicione: none;';
+
+  // VERTICAL ALIGN
+  @if $vertical == none {   
+  
+  } @else if $vertical == stretch {
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+
+  } @else if $vertical == top {
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+  
+  } @else if $vertical == bottom {
+      -webkit-box-align: end;
+      -ms-flex-align: end;
+      align-items: flex-end;
+
+  } @else if $vertical == center {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+
+  } @else if $vertical == baseline {
+      -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+      align-items: baseline;
+  } @else{
+    @error $error-vertical;
+  }
+
+  // HORIZONTAL ALIGN
+  @if $horizontal == none {   
+    
+  } @else if $horizontal == left {
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+
+  } @else if $horizontal == right {
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+
+  } @else if $horizontal == center {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center
+
+  } @else if $horizontal == justify {
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+
+  } @else if $horizontal == distribute {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+
+  } @else{
+      @error $error-horizontal;
+  }
+}
+
+
+/*
+=========================================================
+ 3 - LINHAMENTO DO CONTEÚDO
+=========================================================
+*/
+
+@mixin content-top {
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+}
+
+@mixin content-center {
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+@mixin content-bottom {
+  -ms-flex-line-pack: end;
+  align-content: flex-end;
+}
+
+@mixin content-stretch {
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+}
+
+@mixin content-justify {
+  -ms-flex-line-pack: justify;
+  align-content: space-between;
+}
+
+@mixin content-distribute {
+  -ms-flex-line-pack: distribute;
+  align-content: space-around;
+}
+
+
+/*
+=========================================================
+ 4 - HELPERS
+=========================================================
+*/
+
+@mixin flow ($direction, $wrap) {
+  -ms-flex-flow: $direction $wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-flow: $direction $wrap;
+}
+
+@mixin wrap ($wrap) {
+  -ms-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}

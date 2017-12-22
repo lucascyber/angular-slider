@@ -1,0 +1,130 @@
+@import "mixins";
+
+/*
+========================================================
+  - ESTE CSS É PARA CHAMAR OS EFEITOS VIA CLASS
+  - QUANDO VOCÊ QUISER CHAMAR OS EFEITOS VIA CLASS
+========================================================
+*/
+
+
+/*
+========================================================
+
+    ************************************************
+                       ÍNDICE
+    ************************************************
+
+      1 - ALINHAMENTOS BÁSICOS HORIZONTAIS
+      2 - LINHAMENTOS BÁSICOS VERTICAIS
+      3 - LINHAMENTO DO CONTEÚDO
+      4 - DIREÇÕES
+========================================================
+*/
+
+
+/*
+=========================================================
+ 1 - ALINHAMENTOS DOS ITENS HORIZONTALMENTE
+=========================================================
+*/
+
+.fx-x-center {
+  @extend .fx;
+  @include itens-align(none, center);
+}
+
+.fx-left {
+  @extend .fx;
+  @include itens-align(none, left);
+}
+
+.fx-right {
+  @extend .fx;
+  @include itens-align(none, right);
+}
+
+.fx-distribute {
+  @extend .fx;
+  @include itens-align(none, distribute);
+}
+
+.fx-justify {
+  @extend .fx;
+  @include itens-align(none, justify);
+}
+
+/*
+=========================================================
+ 2 - ALINHAMENTOS BÁSICOS VERTICAIS
+=========================================================
+*/
+
+.fx-y-center {
+  @extend .fx;
+  @include itens-align(center, none);
+}
+
+.fx-top {
+  @extend .fx;
+  @include itens-align(top, none);
+}
+
+.fx-bottom {
+  @extend .fx;
+  @include itens-align(bottom, none);
+}
+
+.fx-baseline {
+  @extend .fx;
+  @include itens-align(baseline, none);
+}
+
+.fx-stretch {
+  @extend .fx;
+  @include itens-align(stretch, none);
+}
+
+/*
+=========================================================
+ 3 - LINHAMENTO DO CONTEÚDO
+=========================================================
+*/
+
+.fx-content-top {
+  @extend .fx;
+  @include content-top;
+}
+
+.fx-content-center {
+  @extend .fx;
+  @include content-center;
+}
+
+
+
+/*
+=========================================================
+ 4 - DIREÇÕES
+=========================================================
+*/
+
+.fx-row{
+  @extend .fx;
+  @include direction(row);
+}
+
+.fx-column{
+  @extend .fx;
+  @include direction(column);
+}
+
+.fx-wrap{
+  @extend .fx;
+  @include wrap(wrap);
+}
+
+.fx-nowrap{
+  @extend .fx;
+  @include wrap(nowrap);
+}

@@ -1,5 +1,14 @@
-<section class="slider-wrapper">
-  <ul class="slider" #slider>
-    <li></li>
+<section class="slider-wrapper" [ngStyle]="sliderWrapperStyle">
+  <ul class="slider fx-left" #slider>
+    <li *ngFor="let item of items" class="slider-item">
+      <ng-container [ngTemplateOutlet]="item.tr"></ng-container>
+    </li>
   </ul>
+
+  <div class="control-container">
+    <div *ngIf="showControls">
+      <button (click)="prev()">Prev</button>
+      <button (click)="next()">Next</button>
+    </div>
+  </div>
 </section>
